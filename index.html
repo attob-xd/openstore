@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0e16">
+  <meta name="description" content="Free, open-source IPA catalog for Safari. Add AltSources, organize apps and hand off installs to SideStore.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OpenStore">
+
+
+
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;color-scheme:dark;--bg:#0b0e16;--bg2:#101522;--layer:#151b29;--layer2:#202638;--line:#ffffff18;--text:#f6f8ff;--muted:#9ca6bc;--mint:#67f5d1;--mint-dark:#0f4b40;--blue:#8ab7ff;--shadow:0 24px 80px #0005}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:radial-gradient(ellipse 95% 39% at 50% 0%,#2131465c,transparent),var(--bg);color:var(--text);min-height:100svh;font-size:14px}button,input,a,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}a{color:inherit;text-decoration:none}button,select,input{outline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--mint)}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}img{max-width:100%}.shell{max-width:900px;min-height:100svh;margin:auto;padding:calc(env(safe-area-inset-top) + 12px) 22px calc(env(safe-area-inset-bottom) + 108px)}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.brand{font-size:23px;letter-spacing:-1.4px;font-weight:790;display:flex;align-items:center;gap:11px}.brand-mark{height:38px;width:38px;border:1px solid #6cfff757;border-radius:13px;background:linear-gradient(135deg,#142e36,#153b41);display:grid;place-items:center;color:var(--mint);font-size:32px;line-height:1;box-shadow:inset 0 0 17px #52f7c51c}.brand-highlight{color:var(--mint)}.brand-beta{font-size:9px;letter-spacing:1px;color:var(--mint);font-weight:800;vertical-align:middle;margin-left:8px;background:#63fac713;border:1px solid #63fac736;border-radius:6px;padding:3px 4px}.top-button,.icon-button{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#cfd9ea;background:#fff1;border:1px solid var(--line)}.top-button:hover,.icon-button:hover{background:#ffffff1c}.hero{position:relative;overflow:hidden;border:1px solid #5de9bc2a;border-radius:27px;background:linear-gradient(125deg,#1c3340,#192434 65%,#192338);padding:28px 25px;min-height:246px;box-shadow:0 10px 65px #2be6b609;margin-bottom:22px}.hero:before{content:"";position:absolute;height:250px;width:250px;right:-62px;top:-77px;border-radius:50%;background:radial-gradient(circle,#69f1cc45,transparent 70%);filter:blur(10px)}.hero:after{content:"◇";position:absolute;color:#59efbf12;right:0;bottom:-64px;font-size:280px;font-weight:800;line-height:1}.hero>*{position:relative;z-index:1}.eyebrow{display:flex;align-items:center;gap:8px;color:var(--mint);font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:2px}.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px #5dfbd1}.hero h1{font-weight:780;font-size:clamp(31px,5vw,45px);letter-spacing:-1.7px;line-height:1.09;margin:14px 0 11px;max-width:470px}.hero h1 em{color:var(--mint);font-style:normal}.hero p{color:#c3cfde;line-height:1.55;max-width:460px;margin:0 0 24px}.action-row{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid transparent;background:var(--mint);color:#092921;min-height:43px;border-radius:13px;padding:0 16px;font-weight:780;display:inline-flex;align-items:center;gap:9px;justify-content:center;transition:transform .16s,background .16s}.btn:hover{transform:translateY(-1px)}.btn svg{width:17px;height:17px}.btn.secondary{background:#ffffff13;color:#f0f6ff;border-color:#ffffff25}.btn.soft{background:#77eac81a;color:var(--mint);border-color:#70eec02a}.btn.danger{background:#fc687817;color:#ff98a3;border-color:#ff647e44}.btn.small{min-height:35px;padding:0 12px;font-size:12px;border-radius:10px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:27px 0 14px}.section-heading h2,.page-head h1{margin:0;letter-spacing:-.7px;font-size:22px;font-weight:760}.section-heading p,.page-head p{color:var(--muted);line-height:1.5;margin:7px 0 0}.page-head{margin-bottom:25px}.page-head h1{font-size:31px}.hint{font-size:12px;color:var(--muted)}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{border:1px solid var(--line);background:#ffffff08;padding:16px;border-radius:18px}.stat b{display:block;font-size:22px;letter-spacing:-.5px;margin-top:7px}.stat span{font-size:11px;color:var(--muted);font-weight:650}.searchbox{display:flex;align-items:center;gap:10px;padding:0 14px;margin:10px 0 14px;border:1px solid var(--line);border-radius:15px;background:var(--layer);height:49px;color:var(--muted)}.searchbox svg{width:18px}.searchbox input{width:100%;border:0;background:none;color:var(--text);outline:0;font-size:14px}.searchbox input::placeholder{color:#8a95aa}.filter-row{display:flex;gap:7px;overflow:auto;scrollbar-width:none;margin-bottom:14px}.chip{color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:22px;white-space:nowrap;min-height:34px;padding:0 14px;font-size:12px;font-weight:750}.chip.active{background:#67f5d11c;color:var(--mint);border-color:#67f5d169}.app-list{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.app-card{min-width:0;border:1px solid var(--line);background:var(--layer);border-radius:19px;padding:14px;display:flex;align-items:flex-start;gap:12px}.app-icon{width:53px;height:53px;border-radius:16px;flex:0 0 53px;background:linear-gradient(135deg,#293e4c,#273043);display:grid;place-items:center;color:var(--mint);font-weight:800;font-size:23px;overflow:hidden;border:1px solid #ffffff16}.app-icon img{width:100%;height:100%;object-fit:cover}.app-info{min-width:0;flex:1}.app-name{font-weight:790;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.app-developer{margin-top:4px;font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.app-desc{font-size:11px;line-height:1.45;color:#abb6cb;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.app-actions{display:flex;gap:6px;margin-top:11px;align-items:center;justify-content:space-between}.mini-link{color:var(--mint);font-size:12px;font-weight:800;border:none;background:transparent;padding:5px 0}.star{border:0;background:#ffffff0c;border-radius:8px;padding:7px;color:var(--muted);display:grid;place-items:center}.star.faved{color:#ffe697}.star svg{width:17px;height:17px}.empty{padding:35px 20px;border:1px dashed #ffffff32;border-radius:19px;background:#ffffff04;text-align:center;color:var(--muted)}.empty .empty-icon{font-size:34px;display:block;margin-bottom:9px}.empty b{display:block;color:var(--text);font-size:16px;margin-bottom:5px}.source-list{display:grid;gap:12px}.source-card,.panel{padding:20px;border:1px solid var(--line);border-radius:19px;background:var(--layer)}.source-card{display:flex;gap:14px;align-items:center}.source-icon{width:47px;height:47px;border-radius:15px;background:#72dccc1f;display:grid;place-items:center;color:var(--mint);flex:0 0 47px}.source-icon svg{width:24px}.source-info{flex:1;min-width:0}.source-info b{font-size:15px}.source-info p{margin:5px 0 0;font-size:12px;color:var(--muted)}.source-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.source-card .source-actions{margin-top:7px}.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}.panel h3{margin:0 0 8px;font-size:16px;letter-spacing:-.25px}.panel p{line-height:1.55;margin:0;color:var(--muted)}.panel-visual{height:44px;width:44px;border-radius:13px;background:#68efbc18;color:var(--mint);display:grid;place-items:center;margin-bottom:13px}.panel-visual svg{height:24px;width:24px}.step{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}.step:last-child{border:0}.step-num{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:#69eccb20;color:var(--mint);font-weight:790;flex:0 0 30px}.step b{display:block;margin:2px 0 6px}.step p{color:var(--muted);font-size:12px;line-height:1.45;margin:0}.warning{border:1px solid #f9c7704a;background:#d7a8490e;padding:15px 16px;border-radius:15px;color:#f4d99c;line-height:1.5;font-size:12px}.warning b{color:#ffdfa6}.info{border:1px solid #67f5d13b;background:#67f5d10b;padding:14px 16px;border-radius:14px;color:#b0eadc;line-height:1.5;font-size:12px}.field{margin:14px 0}.field label{display:block;font-weight:690;font-size:12px;margin-bottom:7px;color:#c7d1e5}.field input,.field textarea{display:block;width:100%;border:1px solid #ffffff29;background:var(--bg2);border-radius:12px;color:var(--text);padding:13px 14px;min-height:45px;outline:none;font-size:14px}.field textarea{min-height:90px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--mint)}.field input::placeholder{color:#7c889d}.field small{color:var(--muted);display:block;margin-top:6px}.modal{position:relative;z-index:2;width:min(calc(100% - 25px),495px);max-height:min(87svh,800px);overflow:auto;background:#1a2030;border:1px solid #ffffff2e;border-radius:25px;box-shadow:var(--shadow);padding:25px;margin:auto;overscroll-behavior:contain}.overlay[hidden]{display:none}.overlay{position:fixed;z-index:22;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:env(safe-area-inset-bottom)}.backdrop{position:absolute;inset:0;background:#000b;backdrop-filter:blur(8px)}.modal h2{font-size:22px;letter-spacing:-.5px;margin:0 0 10px}.modal p{color:var(--muted);line-height:1.5}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.modal .close-button{background:#ffffff12;border:1px solid #ffffff18;color:var(--text);border-radius:10px;width:35px;height:35px;display:grid;place-items:center;font-size:24px;line-height:1}.modal .action-row{margin-top:17px}.overline{font-size:11px;font-weight:750;letter-spacing:1.4px;color:var(--mint);text-transform:uppercase;margin:14px 0}.textlink{color:var(--mint);text-decoration:underline;text-underline-offset:3px}.bullet{padding-left:20px;line-height:1.65;color:var(--muted)}.space{height:15px}.separator{height:1px;background:var(--line);margin:19px 0}.toast{position:fixed;z-index:50;left:50%;top:calc(env(safe-area-inset-top) + 12px);transform:translateX(-50%);background:#223b3c;border:1px solid #73f5c075;color:#defff4;padding:12px 17px;border-radius:14px;box-shadow:var(--shadow);max-width:min(90vw,430px);text-align:center;font-weight:680}.toast[hidden]{display:none}.bottom-nav{position:fixed;z-index:10;bottom:calc(env(safe-area-inset-bottom) + 15px);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:5px;padding:7px;width:min(calc(100% - 30px),640px);height:73px;border-radius:24px;border:1px solid #ffffff2a;background:#1c2335ee;box-shadow:0 10px 35px #0009;backdrop-filter:blur(22px)}.nav-item{flex:1;border:0;background:none;border-radius:18px;color:#a0a9bc;min-width:0;height:57px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:10px;font-weight:690}.nav-item svg{width:22px;height:22px}.nav-item.active{background:#65efc41b;color:var(--mint)}.nav-item.active span{font-weight:820}.muted{color:var(--muted)}.row-between{display:flex;justify-content:space-between;gap:12px;align-items:center}.tiny{font-size:11px}.code{display:block;background:#0c111f;padding:13px;border-radius:11px;overflow-wrap:anywhere;font-size:12px;color:#b5eddc;margin:9px 0}.switch{border:1px solid var(--line);border-radius:13px;padding:12px 15px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#ffffff07}.switch input{accent-color:var(--mint);width:19px;height:19px}.settings-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}.settings-row:last-child{border:0}.footer-note{text-align:center;color:var(--muted);font-size:11px;padding:25px 0;line-height:1.6}body.light{color-scheme:light;--bg:#f3f7fb;--bg2:#e9edf5;--layer:#fff;--layer2:#e0e8f1;--line:#0e25411c;--text:#17283a;--muted:#617387;--mint:#09866d;--mint-dark:#d7f6e9;--blue:#2368ad;--shadow:0 24px 80px #2242}body.light{background:radial-gradient(ellipse 95% 39% at 50% 0%,#a5dcf35c,transparent),var(--bg)}body.light .hero{background:linear-gradient(125deg,#d7e9e7,#dce9f2)}body.light .hero p,body.light .app-desc{color:#56697c}body.light .modal{background:#fff;border-color:#c3ceda}body.light .btn.secondary{color:#21313c;background:#ffffffb3;border-color:#33455c25}body.light .bottom-nav{background:#fffffff0;border-color:#cbd2dd}body.light .app-card{background:#fff}body.light .searchbox{background:#fff}body.light .code{background:#e9f2f6;color:#167760}
+@media(max-width:610px){.shell{padding-left:16px;padding-right:16px}.hero{padding:23px 20px}.app-list,.two-cols{grid-template-columns:1fr}.app-card{min-height:112px}.stat{padding:12px}.stat span{font-size:10px}.topbar{margin-bottom:22px}.source-card{align-items:flex-start;flex-wrap:wrap}.source-icon{width:40px;height:40px;flex-basis:40px}.source-actions{width:100%}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+</style>
+  <title>OpenStore — Your IPA library</title>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#explore" aria-label="OpenStore home"><span class="brand-mark" aria-hidden="true">◇</span><span>open<span class="brand-highlight">store</span><span class="brand-beta">BETA</span></span></a>
+      <button class="top-button" id="helpButton" aria-label="Read installation requirements" title="Installation help">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.6 2.6 0 1 1 4.4 1.85c-1.1 1-1.9 1.4-1.9 2.65"/><path d="M12 17h.01"/></svg>
+      </button>
+    </header>
+    <div id="notice" class="toast" role="status" aria-live="polite" hidden></div>
+    <div id="mainContent"></div>
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button data-tab="explore" class="nav-item active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg><span>Explore</span></button>
+      <button data-tab="sources" class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M4 12a8 8 0 0 1 8-8M20 12a8 8 0 0 0-8-8M4 12a8 8 0 0 0 8 8M20 12a8 8 0 0 1-8 8"/></svg><span>Sources</span></button>
+      <button data-tab="install" class="nav-item"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 17v3h14v-3"/></svg><span>Install</span></button>
+      <button data-tab="device" class="nav-item"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Device</span></button>
+      <button data-tab="settings" class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></button>
+    </nav>
+  </main>
+  <div class="overlay" id="overlay" hidden><div class="backdrop" data-action="close-modal"></div><div class="modal" role="dialog" aria-modal="true" aria-label="Dialog" id="modalBody"></div></div>
+  <input id="ipaPicker" type="file" accept=".ipa,application/octet-stream" hidden>
+  <input id="jsonPicker" type="file" accept=".json,application/json" hidden>
+  <input id="statePicker" type="file" accept=".json,application/json" hidden>
+<script>
+// OpenStore shared parsing/validation helpers. No dependencies, no remote services.
+const STORAGE_KEY = 'openstore-v1';
+
+function safeHttpsUrl(value, { allowLocal = false } = {}) {
+  if (typeof value !== 'string' || value.trim().length === 0) return null;
+  try {
+    const url = new URL(value.trim());
+    if (url.protocol === 'https:') return url.toString();
+    if (allowLocal && url.protocol === 'http:' && ['localhost','127.0.0.1'].includes(url.hostname)) return url.toString();
+  } catch { /* invalid */ }
+  return null;
+}
+
+function makeSideStoreInstallUrl(ipaURL) {
+  const verified = safeHttpsUrl(ipaURL);
+  if (!verified) throw new Error('Provide an HTTPS direct link to the IPA file.');
+  return 'sidestore://install?url=' + encodeURIComponent(verified);
+}
+
+function makeSideStoreSourceUrl(sourceURL) {
+  const verified = safeHttpsUrl(sourceURL);
+  if (!verified) throw new Error('Provide an HTTPS URL to an AltStore source JSON file.');
+  return 'sidestore://source?url=' + encodeURIComponent(verified);
+}
+
+const limited = (input, length = 300) => String(input ?? '').trim().slice(0,length);
+function parseAltSource(raw, origin = '') {
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.apps)) throw new Error('Not an AltStore source: the JSON must contain an apps array.');
+  if (raw.apps.length > 1000) throw new Error('This source has more than 1,000 apps; please use a smaller source.');
+  const apps = raw.apps.map((item, index) => {
+    if (!item || typeof item !== 'object') return null;
+    const newest = Array.isArray(item.versions) ? item.versions[0] : null;
+    const url = safeHttpsUrl(newest?.downloadURL || item.downloadURL || '');
+    const icon = safeHttpsUrl(item.iconURL || '');
+    const name = limited(item.name, 100);
+    if (!name) return null;
+    return {
+      id: limited(item.bundleIdentifier || `${origin || 'file'}:${index}`, 250),
+      name,
+      developer: limited(item.developerName, 100) || 'Unknown developer',
+      subtitle: limited(item.subtitle || item.localizedDescription || '', 280),
+      version: limited(newest?.version || item.version || '', 32),
+      icon,
+      url,
+      website: safeHttpsUrl(item.website || '')
+    };
+  }).filter(Boolean);
+  return {
+    title: limited(raw.name, 100) || 'Untitled source',
+    subtitle: limited(raw.subtitle || raw.description || '', 250),
+    apps
+  };
+}
+
+function makeInitialState() {
+  return {sources: [], manualApps: [], favoriteKeys: [], theme: 'dark'};
+}
+
+function loadState(storage) {
+  try {
+    const saved = JSON.parse(storage.getItem(STORAGE_KEY));
+    if (!saved || typeof saved !== 'object') return makeInitialState();
+    return {
+      sources: Array.isArray(saved.sources) ? saved.sources.slice(0,100) : [],
+      manualApps: Array.isArray(saved.manualApps) ? saved.manualApps.slice(0,100) : [],
+      favoriteKeys: Array.isArray(saved.favoriteKeys) ? saved.favoriteKeys.slice(0,1000) : [],
+      theme: saved.theme === 'light' ? 'light' : 'dark'
+    };
+  } catch { return makeInitialState(); }
+}
+
+function collectApps(state) {
+  return [
+    ...(state.manualApps || []).map(app=>({...app, sourceName:'My apps', key:`manual:${app.id}`})),
+    ...(state.sources || []).flatMap(src => (src.apps||[]).map((app,idx)=>({
+      ...app, sourceName:src.title, key:`source:${src.id}:${app.id}:${idx}`
+    })))
+  ];
+}
+
+function filenameFromURL(url) {
+  try { return decodeURIComponent(new URL(url).pathname.split('/').pop() || 'app.ipa'); }
+  catch { return 'app.ipa'; }
+}
+
+
+
+const main = document.querySelector('#mainContent');
+const overlay = document.querySelector('#overlay');
+const modalBody = document.querySelector('#modalBody');
+const ipaPicker = document.querySelector('#ipaPicker');
+const jsonPicker = document.querySelector('#jsonPicker');
+const statePicker = document.querySelector('#statePicker');
+const notice = document.querySelector('#notice');
+let state = loadState(localStorage);
+let tab = 'explore';
+let filter = 'all';
+let search = '';
+let selectedIPA = null;
+let toastTimer;
+let progress = false;
+
+const esc = input => String(input ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon = (name, size='20') => {
+  const paths = {
+    plus:'<path d="M12 5v14M5 12h14"/>',
+    box:'<rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M12 8v8"/>',
+    download:'<path d="M12 3v12m-4-4 4 4 4-4M4 17v4h16v-4"/>',
+    upload:'<path d="M12 21V9m4 4-4-4-4 4M4 7V3h16v4"/>',
+    link:'<path d="m10 13 4-4m-6 7H6a4 4 0 0 1 0-8h3m6 0h3a4 4 0 0 1 0 8h-3"/>',
+    star:'<path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01Z"/>',
+    chevron:'<path d="m9 18 6-6-6-6"/>',
+    refresh:'<path d="M20 11a8 8 0 1 0-2 6M20 4v7h-7"/>',
+    trash:'<path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"/>',
+    check:'<path d="m5 12 4 4L19 6"/>',
+    arrow:'<path d="M5 12h14m-6-6 6 6-6 6"/>',
+    file:'<path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M13 2v7h7M8 14h8m-8 4h8"/>',
+    shield:'<path d="m12 22 7-4V6l-7-4-7 4v12Z"/><path d="m9 12 2 2 4-4"/>',
+    globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18m-9-9a16 16 0 0 1 0 18m0-18a16 16 0 0 0 0 18"/>',
+    bolt:'<path d="m13 2-9 11h7l-1 9 10-12h-7z"/>',
+    info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/>'
+  };
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths[name]||paths.box}</svg>`;
+};
+const persist = () => {try {localStorage.setItem(STORAGE_KEY,JSON.stringify(state));} catch {toast('Your browser storage is full. Export your library in Settings.');}};
+const toast = msg => {notice.textContent = msg;notice.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>notice.hidden=true,4200);};
+const fmtSize = n => n >= 1024*1024*1024 ? `${(n/1024**3).toFixed(2)} GB` : n >= 1024*1024 ? `${(n/1024**2).toFixed(1)} MB` : `${Math.round(n/1024)} KB`;
+const apps = () => collectApps(state);
+const button = (action, text, variant='secondary', extra='') => `<button type="button" class="btn ${variant}" data-action="${action}" ${extra}>${text}</button>`;
+const openLink = url => { const safe = safeHttpsUrl(url); if (safe) window.open(safe,'_blank','noopener,noreferrer'); else toast('This link is invalid or is not HTTPS.'); };
+
+function render(){
+ document.body.classList.toggle('light',state.theme==='light');
+ document.querySelector('meta[name="theme-color"]').content=state.theme==='light'?'#f3f7fb':'#0b0e16';
+ document.querySelectorAll('.nav-item').forEach(btn=>btn.classList.toggle('active',btn.dataset.tab===tab));
+ main.innerHTML = ({explore:renderExplore,sources:renderSources,install:renderInstall,device:renderDevice,settings:renderSettings}[tab])();
+}
+function selectTab(value){
+ tab=value;location.hash=value;render();window.scrollTo({top:0,behavior:'instant'});
+}
+function renderExplore(){
+  const all = apps();const num=state.sources.length;
+  return `<section class="hero"><div class="eyebrow"><span class="eyebrow-dot"></span> Free, open-source, and yours</div><h1>Your apps.<br><em>Zero subscriptions.</em></h1><p>Build your own IPA library, add AltStore sources, and hand off installations to SideStore with a free Apple Account.</p><div class="action-row">${button('pick-ipa',icon('plus')+' Import IPA','primary')}${button('open-source-modal',icon('globe')+' Add source','secondary')}</div></section>
+    <div class="stat-grid"><div class="stat"><span>Library apps</span><b>${all.length}</b></div><div class="stat"><span>Active sources</span><b>${num}</b></div><div class="stat"><span>Subscriptions</span><b>$0</b></div></div>
+    <div class="section-heading"><div><h2>Discover</h2><p>Your personal source catalog</p></div>${button('add-manual',icon('plus')+' App','secondary small')}</div>
+    <label class="searchbox">${icon('box')}<input id="appSearch" type="search" autocomplete="off" placeholder="Search apps, developers, sources…" value="${esc(search)}" aria-label="Search apps"></label>
+    <div class="filter-row"><button class="chip ${filter==='all'?'active':''}" data-filter="all">All apps</button><button class="chip ${filter==='favorites'?'active':''}" data-filter="favorites">Favorites</button><button class="chip ${filter==='manual'?'active':''}" data-filter="manual">My links</button></div>
+    <div id="catalog">${renderCatalog()}</div>
+    <div class="section-heading"><div><h2>Looking for MeloNX?</h2><p>Get the IPA from its developer's release page</p></div></div>
+    <div class="panel"><div class="row-between" style="gap:17px"><div><h3>MeloNX releases</h3><p>Download the IPA from the project's releases, then import or share it. Installation and JIT require additional setup.</p></div><span class="source-icon">${icon('download')}</span></div><div class="action-row" style="margin-top:15px">${button('melonx',icon('arrow')+' Official release page','soft small')}</div></div>`;
+}
+function renderCatalog(){
+ const q = search.trim().toLocaleLowerCase();
+ const displayed=apps().filter(app=> (filter==='all'||filter==='favorites'&&state.favoriteKeys.includes(app.key)||filter==='manual'&&app.key.startsWith('manual:')) && (!q||[app.name,app.developer,app.sourceName,app.subtitle].some(v=>String(v||'').toLocaleLowerCase().includes(q))));
+ if (!displayed.length) return `<div class="empty"><span class="empty-icon">◇</span><b>${apps().length?'No matching apps yet':'Your library is empty'}</b><span>${apps().length?'Try another search or change the filter.':'Add an AltStore source or your own IPA link to get started.'}</span><div class="action-row" style="justify-content:center;margin-top:18px">${button('open-source-modal',icon('plus')+' Add source','soft small')}</div></div>`;
+ return `<div class="app-list">${displayed.map(app=>{
+  const key=encodeURIComponent(app.key);const img=app.icon&&safeHttpsUrl(app.icon)?`<img loading="lazy" alt="" src="${esc(app.icon)}" onerror="this.remove()">`:esc(app.name.charAt(0).toUpperCase());
+  return `<article class="app-card"><div class="app-icon">${img}</div><div class="app-info"><div class="app-name" title="${esc(app.name)}">${esc(app.name)}</div><div class="app-developer">${esc(app.developer)} · ${esc(app.version||app.sourceName)}</div><div class="app-desc">${esc(app.subtitle||'From '+app.sourceName)}</div><div class="app-actions"><button class="mini-link" data-action="detail" data-key="${key}">View details →</button><button class="star ${state.favoriteKeys.includes(app.key)?'faved':''}" data-action="favorite" data-key="${key}" aria-label="Toggle favorite">${icon('star')}</button></div></div></article>`;
+ }).join('')}</div>`;
+}
+function renderSources(){
+ return `<header class="page-head"><h1>App sources</h1><p>Connect AltStore-compatible sources or import a source JSON file from Files.</p></header><div class="action-row" style="margin-bottom:18px">${button('open-source-modal',icon('plus')+' Add URL','primary')}${button('pick-json',icon('file')+' Import JSON','secondary')}</div>
+  <div class="info">${icon('info')} Source URLs must permit browser access (CORS). If one fails to load, download the JSON in Safari and use <b>Import JSON</b>. You can also add the source directly in SideStore.</div><div class="space"></div>
+  <div class="source-list">${state.sources.length ? state.sources.map(src=>{
+   const key=encodeURIComponent(src.id);
+   return `<div class="source-card"><div class="source-icon">${icon('globe')}</div><div class="source-info"><b>${esc(src.title)}</b><p>${src.apps.length} apps · ${esc(src.subtitle||'AltStore source')}</p><div class="source-actions">${src.url?`<button class="btn small secondary" data-action="refresh-source" data-id="${key}">${icon('refresh')} Refresh</button><button class="btn small soft" data-action="send-source" data-id="${key}">${icon('arrow')} SideStore</button>`:''}<button class="btn small danger" data-action="remove-source" data-id="${key}">${icon('trash')} Remove</button></div></div></div>`;
+  }).join('') : `<div class="empty"><span class="empty-icon">⬡</span><b>No sources added</b><span>Paste an AltSource URL or choose a downloaded JSON file.</span></div>`}</div>
+  <div class="section-heading"><h2>Source format</h2></div><div class="panel"><p>OpenStore reads the standard AltStore / SideStore source format. It doesn't host apps or modify IPA files.</p><div class="action-row" style="margin-top:14px">${button('docs-altstore','Source documentation →','secondary small')}</div></div>`;
+}
+function renderInstall(){
+ return `<header class="page-head"><h1>Install an IPA</h1><p>Import a file to share with an installer, or send a public HTTPS IPA link straight to SideStore.</p></header>
+ <div class="warning"><b>Safari can't sign an IPA by itself.</b> A free Apple Account can be used by a native installer like SideStore, but SideStore must already be configured on your iPhone. OpenStore never asks for Apple credentials.</div><div class="space"></div>
+ <div class="two-cols"><div class="panel"><div class="panel-visual">${icon('file')}</div><h3>From Files</h3><p>Select an IPA stored on your iPhone. Keep it in Files or share it to a compatible installer.</p><div class="action-row" style="margin-top:17px">${button('pick-ipa',icon('plus')+' Choose IPA','soft small')}</div></div>
+ <div class="panel"><div class="panel-visual">${icon('link')}</div><h3>From a URL</h3><p>Provide an HTTPS download link, then hand it off to SideStore using its documented URL scheme.</p><div class="action-row" style="margin-top:17px">${button('url-modal',icon('arrow')+' Enter IPA URL','soft small')}</div></div></div>
+ <div class="section-heading"><h2>Selected IPA</h2></div>
+ <div class="panel">${selectedIPA ? `<div class="row-between"><div><b>${esc(selectedIPA.name)}</b><p>${fmtSize(selectedIPA.size)} · Only in this browser session</p></div><span class="source-icon">${icon('file')}</span></div><div class="action-row" style="margin-top:17px">${button('share-ipa',icon('upload')+' Share IPA','primary small')}${button('clear-ipa','Clear','secondary small')}</div>` : `<p>No file selected. Import an IPA to use iOS's Share sheet.</p>`}</div>
+ <div class="section-heading"><h2>Signing setup</h2></div><div class="panel"><div class="step"><span class="step-num">1</span><div><b>Install and configure SideStore</b><p>A free Apple Account works, but initial setup needs a compatible native installer and device pairing.</p></div></div><div class="step"><span class="step-num">2</span><div><b>Get the IPA</b><p>Use an app developer's release page or your own hosted IPA file.</p></div></div><div class="step"><span class="step-num">3</span><div><b>Send to SideStore</b><p>Tap an install button in your library, or use SideStore to choose the IPA from Files.</p></div></div><div class="action-row" style="margin-top:15px">${button('sidestore-docs','SideStore setup guide →','secondary small')}${button('sideinstaller-site','iOS 27 on-device setup →','soft small')}</div></div>`;
+}
+function getIOSVersion(){ const ua=navigator.userAgent||'';let found=ua.match(/(?:iPhone OS|CPU OS) (\d+)[_\.](\d+)/);return found?`${found[1]}.${found[2]}`:'Not available in Safari'; }
+function renderDevice(){
+ return `<header class="page-head"><h1>Your device</h1><p>Local browser information and free developer account limits.</p></header>
+ <div class="panel"><div class="row-between"><div><div class="eyebrow">DEVICE</div><h3 style="font-size:24px;margin-top:10px">${/iPhone/i.test(navigator.userAgent)?'iPhone':/iPad/i.test(navigator.userAgent)?'iPad':'This browser'}</h3><p>iOS/iPadOS version: ${esc(getIOSVersion())}</p></div><div class="source-icon" style="width:67px;height:67px">${icon('shield','32')}</div></div></div>
+ <div class="section-heading"><h2>Free Apple Account</h2></div><div class="stat-grid"><div class="stat"><span>Apps per device</span><b>3</b></div><div class="stat"><span>Profile lifetime</span><b>7 days</b></div><div class="stat"><span>Annual fee</span><b>$0</b></div></div>
+ <p class="hint" style="line-height:1.6;margin:13px 0 24px">These are Apple Personal Team limits. OpenStore cannot read your UDID, detect certificates, or change your Apple Developer membership from Safari.</p>
+ <div class="section-heading"><h2>Connection</h2></div><div class="panel"><h3>SideStore integration</h3><p>The install buttons use the documented <code>sidestore://</code> URL scheme. They work only if SideStore is already installed and configured.</p><div class="action-row" style="margin-top:16px">${button('sidestore-docs',icon('arrow')+' Open setup guide','soft small')}</div></div>`;
+}
+function renderSettings(){
+ return `<header class="page-head"><h1>Settings</h1><p>Personalize and back up your library. No account, subscriptions or trackers.</p></header>
+ <div class="panel"><label class="switch"><div><b>Light appearance</b><p class="tiny muted" style="margin-top:4px">Switch between light and dark</p></div><input type="checkbox" id="lightToggle" ${state.theme==='light'?'checked':''}></label><div class="settings-row"><div><b>Export library</b><p class="tiny muted" style="margin:5px 0 0">Save your apps and source metadata as JSON</p></div>${button('export-state','Export','secondary small')}</div><div class="settings-row"><div><b>Import backup</b><p class="tiny muted" style="margin:5px 0 0">Restore a previously exported OpenStore JSON</p></div>${button('pick-state','Import','secondary small')}</div><div class="settings-row"><div><b>Clear my library</b><p class="tiny muted" style="margin:5px 0 0">Remove saved sources, favorites and app links</p></div>${button('reset-state','Clear','danger small')}</div></div>
+ <div class="section-heading"><h2>About</h2></div><div class="panel"><h3>OpenStore 1.0</h3><p>A free, independently created open-source IPA library for Safari. Not affiliated with FlekSt0re, SideStore or Apple. Your sources, favorites and manual links stay in your browser storage. Network requests go directly to the source URLs you add.</p><div class="action-row" style="margin-top:16px">${button('docs-apple','Apple signing limitations →','secondary small')}${button('sidestore-docs','SideStore docs →','soft small')}</div></div><div class="footer-note">No paid certificate · No Apple Account password collected · MIT license</div>`;
+}
+function modal(html){modalBody.innerHTML=html;overlay.hidden=false;const field=modalBody.querySelector('input:not([type=hidden])'); if(field) setTimeout(()=>field.focus(),20);}
+function closeModal(){overlay.hidden=true;modalBody.innerHTML='';progress=false;}
+function modalTitle(title,desc=''){return `<div class="modal-head"><h2>${esc(title)}</h2><button class="close-button" data-action="close-modal" aria-label="Close">×</button></div>${desc?`<p>${esc(desc)}</p>`:''}`;}
+function sourceModal(){ modal(`${modalTitle('Add app source','Paste the HTTPS link to a standard AltStore/SideStore source JSON file.')}<form id="sourceForm"><div class="field"><label for="sourceURL">Source JSON URL</label><input type="url" id="sourceURL" name="url" placeholder="https://example.org/apps.json" required autocomplete="off"><small>Some sources block Safari cross-origin requests. Import their JSON from Files if needed.</small></div><div class="action-row"><button type="submit" class="btn">${icon('plus')} Add source</button>${button('pick-json','Import JSON instead','secondary')}</div></form>`);}
+function manualModal(){modal(`${modalTitle('Add app link','An HTTPS link to an IPA you have permission to install.')}<form id="manualForm"><div class="field"><label for="manualName">App name</label><input id="manualName" name="name" required maxlength="100" placeholder="My test app"></div><div class="field"><label for="manualURL">Direct IPA URL</label><input type="url" id="manualURL" name="url" required placeholder="https://example.org/MyApp.ipa"></div><div class="field"><label for="manualDeveloper">Developer (optional)</label><input id="manualDeveloper" name="developer" maxlength="100" placeholder="Developer name"></div><div class="field"><label for="manualIcon">Icon HTTPS URL (optional)</label><input type="url" id="manualIcon" name="icon" placeholder="https://example.org/icon.png"></div><div class="action-row"><button type="submit" class="btn">${icon('check')} Save app</button></div></form>`);}
+function urlModal(){modal(`${modalTitle('Install from URL','The link must lead directly to an IPA file on an HTTPS server.')}<form id="ipaUrlForm"><div class="field"><label for="remoteIPA">IPA download URL</label><input id="remoteIPA" type="url" name="url" required placeholder="https://example.org/app.ipa"></div><div class="action-row"><button class="btn" type="submit">${icon('arrow')} Open in SideStore</button></div><p class="hint">You need SideStore installed and configured first.</p></form>`);}
+function showDetail(key){
+ const app=apps().find(a=>a.key===key);if(!app)return;
+ const safe = safeHttpsUrl(app.url);
+ modal(`<div class="modal-head"><div class="app-icon" style="width:60px;height:60px">${app.icon&&safeHttpsUrl(app.icon)?`<img src="${esc(app.icon)}" alt="" onerror="this.remove()">`:esc(app.name.charAt(0).toUpperCase())}</div><button class="close-button" data-action="close-modal" aria-label="Close">×</button></div><h2 style="margin-top:18px">${esc(app.name)}</h2><p>${esc(app.developer)} ${app.version?'· v'+esc(app.version):''}</p><div class="overline">${esc(app.sourceName)}</div><p>${esc(app.subtitle||'No description provided by this source.')}</p>${!safe?'<div class="warning">This source does not currently provide an HTTPS IPA download URL.</div>':''}<div class="action-row">${safe?`<button class="btn" data-action="install-app" data-key="${encodeURIComponent(app.key)}">${icon('arrow')} SideStore install</button><button class="btn secondary" data-action="download-app" data-key="${encodeURIComponent(app.key)}">${icon('download')} Download IPA</button>`:''}</div>${app.website&&safeHttpsUrl(app.website)?`<div class="action-row"> <button class="btn small secondary" data-action="app-website" data-key="${encodeURIComponent(app.key)}">Developer website ↗</button></div>`:''}<div class="separator"></div><div class="warning"><b>Signing is handled by SideStore, not OpenStore.</b> A free Apple Account needs periodic refreshing, and some apps require entitlements or JIT that free signing cannot provide.</div>${app.key.startsWith('manual:')?`<div class="action-row">${button('delete-app','Remove my app link','danger small',`data-key="${encodeURIComponent(app.key)}"`)}</div>`:''}`);
+}
+async function importOnlineSource(input){
+ const url=safeHttpsUrl(input);if(!url)throw new Error('The source URL must begin with https://');
+ const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),13000);
+ try {
+  const response=await fetch(url,{signal:controller.signal,cache:'no-cache',credentials:'omit'});
+  if (!response.ok) throw new Error('Source server returned HTTP '+response.status);
+  const text=await response.text();if(text.length>2_500_000)throw new Error('Source JSON is too large (over 2.5 MB).');
+  return { ...parseAltSource(JSON.parse(text),url),url };
+ } catch(error){
+  if(error.name==='AbortError')throw new Error('Source timed out. Try importing its JSON file from Files.');
+  if(error instanceof TypeError)throw new Error('Safari could not fetch this source (likely CORS). Download its JSON in Safari and import the file instead.');
+  throw error;
+ }finally{clearTimeout(timeout);}
+}
+function addSource(data,existingID){
+ const id=existingID || 'src-'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+ if(existingID){const ix=state.sources.findIndex(s=>s.id===existingID);if(ix>=0)state.sources[ix]={...data,id};}
+ else{ if(state.sources.length>=100)throw new Error('Maximum of 100 sources reached.');state.sources.unshift({...data,id}); }
+ persist();closeModal();render();toast(`${data.title}: ${data.apps.length} app${data.apps.length===1?'':'s'} loaded`);
+}
+function openSideStore(url){try {const target=makeSideStoreInstallUrl(url);window.location.href=target;toast('Opening SideStore, if it is installed…');} catch(err){toast(err.message);}}
+function openSourceInSideStore(url){try{window.location.href=makeSideStoreSourceUrl(url);toast('Opening SideStore, if it is installed…');}catch(err){toast(err.message);}}
+function downloadJSON(obj,name){const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
+async function shareIPA(){if(!selectedIPA)return toast('First choose an IPA.');try{
+ if(navigator.canShare?.({files:[selectedIPA]}) && navigator.share){await navigator.share({files:[selectedIPA],title:selectedIPA.name});return;}
+ toast('This browser cannot share IPA files. The original is still in Files; open it there and use Share → SideStore.');
+ }catch(err){if(err.name!=='AbortError')toast('Could not share this IPA: '+err.message);}}
+const appleDocs='https://developer.apple.com/help/account/basics/about-your-developer-account/';
+const sideDocs='https://docs.sidestore.io/docs/installation/prerequisites';
+const sideInstall='https://sideinstaller.net/';
+const melonxReleases='https://starforgejo.dev/projects/MeloNX/releases';
+
+async function handleAction(btn){
+ const action=btn.dataset.action;const key=btn.dataset.key?decodeURIComponent(btn.dataset.key):null;
+ const id=btn.dataset.id?decodeURIComponent(btn.dataset.id):null;
+ if(action==='close-modal')return closeModal();
+ if(action==='pick-ipa')return ipaPicker.click();
+ if(action==='pick-json')return jsonPicker.click();
+ if(action==='pick-state')return statePicker.click();
+ if(action==='open-source-modal')return sourceModal();
+ if(action==='add-manual')return manualModal();
+ if(action==='url-modal')return urlModal();
+ if(action==='help')return selectTab('install');
+ if(action==='docs-altstore')return openLink('https://faq.altstore.io/developers/make-a-source');
+ if(action==='docs-apple')return openLink(appleDocs);
+ if(action==='sidestore-docs')return openLink(sideDocs);
+ if(action==='sideinstaller-site')return openLink(sideInstall);
+ if(action==='melonx')return openLink(melonxReleases);
+ if(action==='clear-ipa'){selectedIPA=null;ipaPicker.value='';render();return;}
+ if(action==='share-ipa')return shareIPA();
+ if(action==='favorite'){
+  state.favoriteKeys=state.favoriteKeys.includes(key)?state.favoriteKeys.filter(x=>x!==key):[...state.favoriteKeys,key];persist();render();return;
+ }
+ if(action==='detail')return showDetail(key);
+ if(action==='install-app'||action==='download-app'||action==='app-website'){
+  const app=apps().find(a=>a.key===key);if(!app)return toast('App no longer found.');
+  if(action==='install-app')return openSideStore(app.url);
+  if(action==='download-app')return openLink(app.url);
+  return openLink(app.website);
+ }
+ if(action==='delete-app'){
+  const obj=apps().find(x=>x.key===key);
+  if(obj && confirm(`Remove ${obj.name} from your links?`)){state.manualApps=state.manualApps.filter(a=>'manual:'+a.id!==key);persist();closeModal();render();}return;
+ }
+ if(action==='refresh-source'){
+  const src=state.sources.find(x=>x.id===id);if(!src?.url)return;
+  toast('Refreshing '+src.title+'…');try{const result=await importOnlineSource(src.url);addSource(result,id);}catch(err){toast(err.message);}return;
+ }
+ if(action==='remove-source'){
+  const src=state.sources.find(x=>x.id===id);if(src&&confirm(`Remove ${src.title} and its apps?`)){state.sources=state.sources.filter(s=>s.id!==id);persist();render();toast('Source removed');}return;
+ }
+ if(action==='send-source'){
+  const src=state.sources.find(x=>x.id===id);if(src?.url)openSourceInSideStore(src.url);return;
+ }
+ if(action==='export-state')return downloadJSON({...state,app:'openstore',schema:1},'openstore-library.json');
+ if(action==='reset-state'&&confirm('Remove all saved apps, sources and favorites?')){localStorage.removeItem(STORAGE_KEY);state=loadState(localStorage);render();toast('Library cleared');}
+}
+
+document.addEventListener('click',async event=>{
+ const target=event.target.closest('[data-tab],[data-filter],[data-action]');if(!target)return;
+ if(target.dataset.tab)return selectTab(target.dataset.tab);
+ if(target.dataset.filter){filter=target.dataset.filter;render();return;}
+ await handleAction(target);
+});
+document.querySelector('#helpButton').addEventListener('click',()=>selectTab('install'));
+main.addEventListener('input',event=>{if(event.target.id==='appSearch'){search=event.target.value;const catalog=document.querySelector('#catalog');if(catalog)catalog.innerHTML=renderCatalog();}if(event.target.id==='lightToggle'){state.theme=event.target.checked?'light':'dark';persist();render();}});
+document.addEventListener('submit',async event=>{
+ if(!['sourceForm','manualForm','ipaUrlForm'].includes(event.target.id))return;
+ event.preventDefault();if(progress)return;progress=true;
+ const form=event.target;const submit=form.querySelector('[type=submit]');if(submit)submit.disabled=true;
+ try{
+  const data=Object.fromEntries(new FormData(form));
+  if(form.id==='sourceForm'){
+   const src=await importOnlineSource(data.url);
+   const existing=state.sources.find(s=>s.url===src.url);
+   addSource(src,existing?.id);
+  } else if(form.id==='manualForm'){
+   const url=safeHttpsUrl(data.url);if(!url)throw new Error('IPA URL must use HTTPS.');
+   const name=String(data.name||'').trim();if(!name)throw new Error('Please provide an app name.');
+   const iconUrl = data.icon ? safeHttpsUrl(data.icon) : null;
+   if(data.icon&&!iconUrl)throw new Error('Icon URL must use HTTPS.');
+   state.manualApps.unshift({id:'app-'+Date.now().toString(36),name:name.slice(0,100),developer:String(data.developer||'Personal').trim().slice(0,100),subtitle:'Personal IPA link',url,icon:iconUrl,version:'',website:null});persist();closeModal();render();toast('App link added');
+  } else if(form.id==='ipaUrlForm'){
+   const url=safeHttpsUrl(data.url);if(!url)throw new Error('Provide a valid HTTPS IPA link.');closeModal();openSideStore(url);
+  }
+ }catch(err){toast(err.message||'An error occurred.');}finally{progress=false;if(submit)submit.disabled=false;}
+});
+ipaPicker.addEventListener('change',()=>{
+ const file=ipaPicker.files?.[0];if(!file)return;
+ if(!file.name.toLowerCase().endsWith('.ipa'))return toast('Please choose an .ipa file.');
+ selectedIPA=file;selectTab('install');toast(`${file.name} ready to share`);
+});
+jsonPicker.addEventListener('change',async()=>{
+ const file=jsonPicker.files?.[0];if(!file)return;
+ try{if(file.size>2_500_000)throw new Error('Source JSON must be below 2.5 MB.');
+   const parsed=parseAltSource(JSON.parse(await file.text()),file.name);addSource({...parsed,url:null});
+ }catch(err){toast(err.message);}finally{jsonPicker.value='';}
+});
+statePicker.addEventListener('change',async()=>{
+ const file=statePicker.files?.[0];if(!file)return;
+ try{
+  const json=JSON.parse(await file.text());if(json.app!=='openstore'||json.schema!==1)throw new Error('This is not an OpenStore backup.');
+  const recovered={sources:[],manualApps:[],favoriteKeys:[],theme:json.theme==='light'?'light':'dark'};
+  if(Array.isArray(json.sources))for(const src of json.sources.slice(0,100)){
+   if(!src||typeof src!=='object')continue;
+   const clean=parseAltSource({name:src.title,subtitle:src.subtitle,apps:(src.apps||[]).map(a=>({name:a.name,bundleIdentifier:a.id,developerName:a.developer,subtitle:a.subtitle,iconURL:a.icon,website:a.website,versions:[{version:a.version,downloadURL:a.url}]}))},'backup');
+   recovered.sources.push({...clean,id:'src-'+crypto.randomUUID(),url:safeHttpsUrl(src.url)});
+  }
+  if(Array.isArray(json.manualApps))for(const a of json.manualApps.slice(0,100)){
+   const url=safeHttpsUrl(a.url);if(url&&a.name)recovered.manualApps.push({id:'app-'+crypto.randomUUID(),name:String(a.name).slice(0,100),url,developer:String(a.developer||'Personal').slice(0,100),subtitle:'Personal IPA link',icon:safeHttpsUrl(a.icon),version:''});
+  }
+  state=recovered;persist();render();toast('Library backup imported. Favorites may need to be reselected.');
+ }catch(err){toast(err.message);}finally{statePicker.value='';}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)closeModal();});
+window.addEventListener('hashchange',()=>{const val=location.hash.slice(1);if(['explore','sources','install','device','settings'].includes(val)&&val!==tab){tab=val;render();}});
+if(['explore','sources','install','device','settings'].includes(location.hash.slice(1)))tab=location.hash.slice(1);
+render();
+
+
+</script>
+</body>
+</html>
