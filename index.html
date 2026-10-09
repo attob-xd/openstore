@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#0b0e16">
-  <meta name="description" content="Free, open-source IPA catalog for Safari. Add AltSources, organize apps and hand off installs to SideStore.">
+  <meta name="description" content="IPA catalog for Safari with self-hosted certificate-based signing support.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="OpenStore">
@@ -16,8 +16,20 @@
 *{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:radial-gradient(ellipse 95% 39% at 50% 0%,#2131465c,transparent),var(--bg);color:var(--text);min-height:100svh;font-size:14px}button,input,a,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}a{color:inherit;text-decoration:none}button,select,input{outline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--mint)}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}img{max-width:100%}.shell{max-width:900px;min-height:100svh;margin:auto;padding:calc(env(safe-area-inset-top) + 12px) 22px calc(env(safe-area-inset-bottom) + 108px)}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.brand{font-size:23px;letter-spacing:-1.4px;font-weight:790;display:flex;align-items:center;gap:11px}.brand-mark{height:38px;width:38px;border:1px solid #6cfff757;border-radius:13px;background:linear-gradient(135deg,#142e36,#153b41);display:grid;place-items:center;color:var(--mint);font-size:32px;line-height:1;box-shadow:inset 0 0 17px #52f7c51c}.brand-highlight{color:var(--mint)}.brand-beta{font-size:9px;letter-spacing:1px;color:var(--mint);font-weight:800;vertical-align:middle;margin-left:8px;background:#63fac713;border:1px solid #63fac736;border-radius:6px;padding:3px 4px}.top-button,.icon-button{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#cfd9ea;background:#fff1;border:1px solid var(--line)}.top-button:hover,.icon-button:hover{background:#ffffff1c}.hero{position:relative;overflow:hidden;border:1px solid #5de9bc2a;border-radius:27px;background:linear-gradient(125deg,#1c3340,#192434 65%,#192338);padding:28px 25px;min-height:246px;box-shadow:0 10px 65px #2be6b609;margin-bottom:22px}.hero:before{content:"";position:absolute;height:250px;width:250px;right:-62px;top:-77px;border-radius:50%;background:radial-gradient(circle,#69f1cc45,transparent 70%);filter:blur(10px)}.hero:after{content:"◇";position:absolute;color:#59efbf12;right:0;bottom:-64px;font-size:280px;font-weight:800;line-height:1}.hero>*{position:relative;z-index:1}.eyebrow{display:flex;align-items:center;gap:8px;color:var(--mint);font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:2px}.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px #5dfbd1}.hero h1{font-weight:780;font-size:clamp(31px,5vw,45px);letter-spacing:-1.7px;line-height:1.09;margin:14px 0 11px;max-width:470px}.hero h1 em{color:var(--mint);font-style:normal}.hero p{color:#c3cfde;line-height:1.55;max-width:460px;margin:0 0 24px}.action-row{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid transparent;background:var(--mint);color:#092921;min-height:43px;border-radius:13px;padding:0 16px;font-weight:780;display:inline-flex;align-items:center;gap:9px;justify-content:center;transition:transform .16s,background .16s}.btn:hover{transform:translateY(-1px)}.btn svg{width:17px;height:17px}.btn.secondary{background:#ffffff13;color:#f0f6ff;border-color:#ffffff25}.btn.soft{background:#77eac81a;color:var(--mint);border-color:#70eec02a}.btn.danger{background:#fc687817;color:#ff98a3;border-color:#ff647e44}.btn.small{min-height:35px;padding:0 12px;font-size:12px;border-radius:10px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:27px 0 14px}.section-heading h2,.page-head h1{margin:0;letter-spacing:-.7px;font-size:22px;font-weight:760}.section-heading p,.page-head p{color:var(--muted);line-height:1.5;margin:7px 0 0}.page-head{margin-bottom:25px}.page-head h1{font-size:31px}.hint{font-size:12px;color:var(--muted)}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{border:1px solid var(--line);background:#ffffff08;padding:16px;border-radius:18px}.stat b{display:block;font-size:22px;letter-spacing:-.5px;margin-top:7px}.stat span{font-size:11px;color:var(--muted);font-weight:650}.searchbox{display:flex;align-items:center;gap:10px;padding:0 14px;margin:10px 0 14px;border:1px solid var(--line);border-radius:15px;background:var(--layer);height:49px;color:var(--muted)}.searchbox svg{width:18px}.searchbox input{width:100%;border:0;background:none;color:var(--text);outline:0;font-size:14px}.searchbox input::placeholder{color:#8a95aa}.filter-row{display:flex;gap:7px;overflow:auto;scrollbar-width:none;margin-bottom:14px}.chip{color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:22px;white-space:nowrap;min-height:34px;padding:0 14px;font-size:12px;font-weight:750}.chip.active{background:#67f5d11c;color:var(--mint);border-color:#67f5d169}.app-list{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.app-card{min-width:0;border:1px solid var(--line);background:var(--layer);border-radius:19px;padding:14px;display:flex;align-items:flex-start;gap:12px}.app-icon{width:53px;height:53px;border-radius:16px;flex:0 0 53px;background:linear-gradient(135deg,#293e4c,#273043);display:grid;place-items:center;color:var(--mint);font-weight:800;font-size:23px;overflow:hidden;border:1px solid #ffffff16}.app-icon img{width:100%;height:100%;object-fit:cover}.app-info{min-width:0;flex:1}.app-name{font-weight:790;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.app-developer{margin-top:4px;font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.app-desc{font-size:11px;line-height:1.45;color:#abb6cb;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.app-actions{display:flex;gap:6px;margin-top:11px;align-items:center;justify-content:space-between}.mini-link{color:var(--mint);font-size:12px;font-weight:800;border:none;background:transparent;padding:5px 0}.star{border:0;background:#ffffff0c;border-radius:8px;padding:7px;color:var(--muted);display:grid;place-items:center}.star.faved{color:#ffe697}.star svg{width:17px;height:17px}.empty{padding:35px 20px;border:1px dashed #ffffff32;border-radius:19px;background:#ffffff04;text-align:center;color:var(--muted)}.empty .empty-icon{font-size:34px;display:block;margin-bottom:9px}.empty b{display:block;color:var(--text);font-size:16px;margin-bottom:5px}.source-list{display:grid;gap:12px}.source-card,.panel{padding:20px;border:1px solid var(--line);border-radius:19px;background:var(--layer)}.source-card{display:flex;gap:14px;align-items:center}.source-icon{width:47px;height:47px;border-radius:15px;background:#72dccc1f;display:grid;place-items:center;color:var(--mint);flex:0 0 47px}.source-icon svg{width:24px}.source-info{flex:1;min-width:0}.source-info b{font-size:15px}.source-info p{margin:5px 0 0;font-size:12px;color:var(--muted)}.source-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.source-card .source-actions{margin-top:7px}.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}.panel h3{margin:0 0 8px;font-size:16px;letter-spacing:-.25px}.panel p{line-height:1.55;margin:0;color:var(--muted)}.panel-visual{height:44px;width:44px;border-radius:13px;background:#68efbc18;color:var(--mint);display:grid;place-items:center;margin-bottom:13px}.panel-visual svg{height:24px;width:24px}.step{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}.step:last-child{border:0}.step-num{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:#69eccb20;color:var(--mint);font-weight:790;flex:0 0 30px}.step b{display:block;margin:2px 0 6px}.step p{color:var(--muted);font-size:12px;line-height:1.45;margin:0}.warning{border:1px solid #f9c7704a;background:#d7a8490e;padding:15px 16px;border-radius:15px;color:#f4d99c;line-height:1.5;font-size:12px}.warning b{color:#ffdfa6}.info{border:1px solid #67f5d13b;background:#67f5d10b;padding:14px 16px;border-radius:14px;color:#b0eadc;line-height:1.5;font-size:12px}.field{margin:14px 0}.field label{display:block;font-weight:690;font-size:12px;margin-bottom:7px;color:#c7d1e5}.field input,.field textarea{display:block;width:100%;border:1px solid #ffffff29;background:var(--bg2);border-radius:12px;color:var(--text);padding:13px 14px;min-height:45px;outline:none;font-size:14px}.field textarea{min-height:90px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--mint)}.field input::placeholder{color:#7c889d}.field small{color:var(--muted);display:block;margin-top:6px}.modal{position:relative;z-index:2;width:min(calc(100% - 25px),495px);max-height:min(87svh,800px);overflow:auto;background:#1a2030;border:1px solid #ffffff2e;border-radius:25px;box-shadow:var(--shadow);padding:25px;margin:auto;overscroll-behavior:contain}.overlay[hidden]{display:none}.overlay{position:fixed;z-index:22;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:env(safe-area-inset-bottom)}.backdrop{position:absolute;inset:0;background:#000b;backdrop-filter:blur(8px)}.modal h2{font-size:22px;letter-spacing:-.5px;margin:0 0 10px}.modal p{color:var(--muted);line-height:1.5}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.modal .close-button{background:#ffffff12;border:1px solid #ffffff18;color:var(--text);border-radius:10px;width:35px;height:35px;display:grid;place-items:center;font-size:24px;line-height:1}.modal .action-row{margin-top:17px}.overline{font-size:11px;font-weight:750;letter-spacing:1.4px;color:var(--mint);text-transform:uppercase;margin:14px 0}.textlink{color:var(--mint);text-decoration:underline;text-underline-offset:3px}.bullet{padding-left:20px;line-height:1.65;color:var(--muted)}.space{height:15px}.separator{height:1px;background:var(--line);margin:19px 0}.toast{position:fixed;z-index:50;left:50%;top:calc(env(safe-area-inset-top) + 12px);transform:translateX(-50%);background:#223b3c;border:1px solid #73f5c075;color:#defff4;padding:12px 17px;border-radius:14px;box-shadow:var(--shadow);max-width:min(90vw,430px);text-align:center;font-weight:680}.toast[hidden]{display:none}.bottom-nav{position:fixed;z-index:10;bottom:calc(env(safe-area-inset-bottom) + 15px);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:5px;padding:7px;width:min(calc(100% - 30px),640px);height:73px;border-radius:24px;border:1px solid #ffffff2a;background:#1c2335ee;box-shadow:0 10px 35px #0009;backdrop-filter:blur(22px)}.nav-item{flex:1;border:0;background:none;border-radius:18px;color:#a0a9bc;min-width:0;height:57px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:10px;font-weight:690}.nav-item svg{width:22px;height:22px}.nav-item.active{background:#65efc41b;color:var(--mint)}.nav-item.active span{font-weight:820}.muted{color:var(--muted)}.row-between{display:flex;justify-content:space-between;gap:12px;align-items:center}.tiny{font-size:11px}.code{display:block;background:#0c111f;padding:13px;border-radius:11px;overflow-wrap:anywhere;font-size:12px;color:#b5eddc;margin:9px 0}.switch{border:1px solid var(--line);border-radius:13px;padding:12px 15px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#ffffff07}.switch input{accent-color:var(--mint);width:19px;height:19px}.settings-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}.settings-row:last-child{border:0}.footer-note{text-align:center;color:var(--muted);font-size:11px;padding:25px 0;line-height:1.6}body.light{color-scheme:light;--bg:#f3f7fb;--bg2:#e9edf5;--layer:#fff;--layer2:#e0e8f1;--line:#0e25411c;--text:#17283a;--muted:#617387;--mint:#09866d;--mint-dark:#d7f6e9;--blue:#2368ad;--shadow:0 24px 80px #2242}body.light{background:radial-gradient(ellipse 95% 39% at 50% 0%,#a5dcf35c,transparent),var(--bg)}body.light .hero{background:linear-gradient(125deg,#d7e9e7,#dce9f2)}body.light .hero p,body.light .app-desc{color:#56697c}body.light .modal{background:#fff;border-color:#c3ceda}body.light .btn.secondary{color:#21313c;background:#ffffffb3;border-color:#33455c25}body.light .bottom-nav{background:#fffffff0;border-color:#cbd2dd}body.light .app-card{background:#fff}body.light .searchbox{background:#fff}body.light .code{background:#e9f2f6;color:#167760}
 @media(max-width:610px){.shell{padding-left:16px;padding-right:16px}.hero{padding:23px 20px}.app-list,.two-cols{grid-template-columns:1fr}.app-card{min-height:112px}.stat{padding:12px}.stat span{font-size:10px}.topbar{margin-bottom:22px}.source-card{align-items:flex-start;flex-wrap:wrap}.source-icon{width:40px;height:40px;flex-basis:40px}.source-actions{width:100%}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
 
+
+/* Signer UI */
+.bottom-nav{overflow-x:auto;scrollbar-width:none}.nav-item{min-width:49px}
+.signer-panel{border:1px solid var(--line);border-radius:19px;padding:20px;background:var(--layer);margin-bottom:16px}
+.signer-panel h3{margin:0 0 12px}.signer-panel p{color:var(--muted);line-height:1.55}
+.signer-panel input,.signer-panel select{font:inherit;width:100%;color:var(--text);background:var(--bg2);border:1px solid #ffffff29;border-radius:12px;min-height:43px;padding:10px;outline-offset:3px}
+.signer-panel input[type=file]{padding:10px 8px}.signer-panel label{font-size:12px;display:block;font-weight:750;margin:13px 0 5px;color:#d1dcea}
+.signer-panel .tiny{font-size:12px}.signer-panel .signer-buttons{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0 3px}
+.signer-results a{color:var(--mint);text-decoration:underline;word-break:break-word}
+.status-line{font-size:12px;color:var(--muted);white-space:pre-wrap;margin:12px 0;line-height:1.5}
+.signer-panel button:disabled{opacity:.45}
+@media(max-width:420px){.signer-panel{padding:15px}.bottom-nav .nav-item span{font-size:10px}}
 </style>
-  <title>OpenStore — Your IPA library</title>
+  <title>OpenStore 2 — IPA library & signer</title>
 </head>
 <body>
   <main class="shell">
@@ -33,6 +45,7 @@
       <button data-tab="explore" class="nav-item active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg><span>Explore</span></button>
       <button data-tab="sources" class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M4 12a8 8 0 0 1 8-8M20 12a8 8 0 0 0-8-8M4 12a8 8 0 0 0 8 8M20 12a8 8 0 0 1-8 8"/></svg><span>Sources</span></button>
       <button data-tab="install" class="nav-item"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 17v3h14v-3"/></svg><span>Install</span></button>
+      <button data-tab="signer" class="nav-item"><svg viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5-4 8-8 10-4-2-8-5-8-10V6z"/><path d="m8 12 3 3 5-6"/></svg><span>Signer</span></button>
       <button data-tab="device" class="nav-item"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Device</span></button>
       <button data-tab="settings" class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></button>
     </nav>
@@ -177,7 +190,7 @@ function render(){
  document.body.classList.toggle('light',state.theme==='light');
  document.querySelector('meta[name="theme-color"]').content=state.theme==='light'?'#f3f7fb':'#0b0e16';
  document.querySelectorAll('.nav-item').forEach(btn=>btn.classList.toggle('active',btn.dataset.tab===tab));
- main.innerHTML = ({explore:renderExplore,sources:renderSources,install:renderInstall,device:renderDevice,settings:renderSettings}[tab])();
+ main.innerHTML = ({explore:renderExplore,sources:renderSources,install:renderInstall,signer:renderSigner,device:renderDevice,settings:renderSettings}[tab])();
 }
 function selectTab(value){
  tab=value;location.hash=value;render();window.scrollTo({top:0,behavior:'instant'});
@@ -209,7 +222,7 @@ function renderSources(){
    const key=encodeURIComponent(src.id);
    return `<div class="source-card"><div class="source-icon">${icon('globe')}</div><div class="source-info"><b>${esc(src.title)}</b><p>${src.apps.length} apps · ${esc(src.subtitle||'AltStore source')}</p><div class="source-actions">${src.url?`<button class="btn small secondary" data-action="refresh-source" data-id="${key}">${icon('refresh')} Refresh</button><button class="btn small soft" data-action="send-source" data-id="${key}">${icon('arrow')} SideStore</button>`:''}<button class="btn small danger" data-action="remove-source" data-id="${key}">${icon('trash')} Remove</button></div></div></div>`;
   }).join('') : `<div class="empty"><span class="empty-icon">⬡</span><b>No sources added</b><span>Paste an AltSource URL or choose a downloaded JSON file.</span></div>`}</div>
-  <div class="section-heading"><h2>Source format</h2></div><div class="panel"><p>OpenStore reads the standard AltStore / SideStore source format. It doesn't host apps or modify IPA files.</p><div class="action-row" style="margin-top:14px">${button('docs-altstore','Source documentation →','secondary small')}</div></div>`;
+  <div class="section-heading"><h2>Source format</h2></div><div class="panel"><p>OpenStore reads the standard AltStore / SideStore source format. IPA signing is available separately on the Signer tab if you configure your own backend.</p><div class="action-row" style="margin-top:14px">${button('docs-altstore','Source documentation →','secondary small')}</div></div>`;
 }
 function renderInstall(){
  return `<header class="page-head"><h1>Install an IPA</h1><p>Import a file to share with an installer, or send a public HTTPS IPA link straight to SideStore.</p></header>
@@ -231,7 +244,7 @@ function renderDevice(){
 function renderSettings(){
  return `<header class="page-head"><h1>Settings</h1><p>Personalize and back up your library. No account, subscriptions or trackers.</p></header>
  <div class="panel"><label class="switch"><div><b>Light appearance</b><p class="tiny muted" style="margin-top:4px">Switch between light and dark</p></div><input type="checkbox" id="lightToggle" ${state.theme==='light'?'checked':''}></label><div class="settings-row"><div><b>Export library</b><p class="tiny muted" style="margin:5px 0 0">Save your apps and source metadata as JSON</p></div>${button('export-state','Export','secondary small')}</div><div class="settings-row"><div><b>Import backup</b><p class="tiny muted" style="margin:5px 0 0">Restore a previously exported OpenStore JSON</p></div>${button('pick-state','Import','secondary small')}</div><div class="settings-row"><div><b>Clear my library</b><p class="tiny muted" style="margin:5px 0 0">Remove saved sources, favorites and app links</p></div>${button('reset-state','Clear','danger small')}</div></div>
- <div class="section-heading"><h2>About</h2></div><div class="panel"><h3>OpenStore 1.0</h3><p>A free, independently created open-source IPA library for Safari. Not affiliated with FlekSt0re, SideStore or Apple. Your sources, favorites and manual links stay in your browser storage. Network requests go directly to the source URLs you add.</p><div class="action-row" style="margin-top:16px">${button('docs-apple','Apple signing limitations →','secondary small')}${button('sidestore-docs','SideStore docs →','soft small')}</div></div><div class="footer-note">No paid certificate · No Apple Account password collected · MIT license</div>`;
+ <div class="section-heading"><h2>About</h2></div><div class="panel"><h3>OpenStore 2.0</h3><p>A free, independently created open-source IPA library for Safari. Not affiliated with FlekSt0re, SideStore or Apple. Your sources, favorites and manual links stay in your browser storage. Network requests go directly to the source URLs you add.</p><div class="action-row" style="margin-top:16px">${button('docs-apple','Apple signing limitations →','secondary small')}${button('sidestore-docs','SideStore docs →','soft small')}</div></div><div class="footer-note">No Apple Account password requested · Signing requires your own backend · MIT license</div>`;
 }
 function modal(html){modalBody.innerHTML=html;overlay.hidden=false;const field=modalBody.querySelector('input:not([type=hidden])'); if(field) setTimeout(()=>field.focus(),20);}
 function closeModal(){overlay.hidden=true;modalBody.innerHTML='';progress=false;}
@@ -379,8 +392,132 @@ statePicker.addEventListener('change',async()=>{
  }catch(err){toast(err.message);}finally{statePicker.value='';}
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)closeModal();});
-window.addEventListener('hashchange',()=>{const val=location.hash.slice(1);if(['explore','sources','install','device','settings'].includes(val)&&val!==tab){tab=val;render();}});
-if(['explore','sources','install','device','settings'].includes(location.hash.slice(1)))tab=location.hash.slice(1);
+window.addEventListener('hashchange',()=>{const val=location.hash.slice(1);if(['explore','sources','install','signer','device','settings'].includes(val)&&val!==tab){tab=val;render();}});
+if(['explore','sources','install','signer','device','settings'].includes(location.hash.slice(1)))tab=location.hash.slice(1);
+
+// ===== OpenStore 2 - self-hosted signing service =====
+// Signing is NOT performed by GitHub Pages. Files are submitted only to the configured backend.
+let signerResult = null;
+let signerSources = [];
+let signerBusy = false;
+let signerBackend = localStorage.getItem('openstore-signer-backend') || '';
+const signerErr = (msg) => {
+ const output = document.getElementById('signer-status');
+ if (output) output.textContent = msg;
+ toast(msg);
+};
+function signerUrl(value) {
+ const url = safeHttpsUrl(String(value||''), {allowLocal:true});
+ if(!url)throw new Error('Use the HTTPS URL of your own signer backend.');
+ return url.replace(/\/$/,'');
+}
+function renderSigner() {
+ return `<header class="page-head"><h1>Sign & install</h1><p>Sign IPAs using a matching certificate and provisioning profile, including authorized publicly shared profiles.</p></header>
+ <div class="warning"><b>A signing server is required.</b> This site is hosted on GitHub Pages and cannot sign by itself. Configure your own backend (see the OpenStore README). Shared enterprise certificates may be revoked and are not a reliable replacement for free Apple Account signing. Do not upload sensitive personal certificates to a server you don't control.</div>
+ <div class="section-heading"><h2>1. Your signer</h2></div>
+ <section class="signer-panel">
+ <label for="signerHost">Signing server URL (HTTPS)</label><input type="url" id="signerHost" value="${esc(signerBackend)}" placeholder="https://your-signer.example.com" autocomplete="url" spellcheck="false">
+ <label for="signerToken">Private server access key</label><input type="password" id="signerToken" placeholder="Never put this key in public GitHub files" autocomplete="off"><p class="tiny">Only the server URL is saved locally. Your access key, IPA and certificate are never saved in browser storage.</p>
+ <div class="signer-buttons"><button class="btn secondary small" type="button" data-action="check-signer">${icon('shield')} Test connection</button></div>
+ </section>
+ <div class="section-heading"><h2>2. Select signing files</h2></div>
+ <section class="signer-panel"><p class="tiny">Use a valid P12 private-key certificate and a provisioning profile that authorizes the IPA's bundle ID and your device.</p>
+ <label for="signerIPA">IPA file</label><input id="signerIPA" type="file" accept=".ipa,application/octet-stream">
+ <label for="signerP12">Signing certificate (.p12/.pfx)</label><input id="signerP12" type="file" accept=".p12,.pfx">
+ <label for="signerProfile">Provisioning profile (.mobileprovision)</label><input id="signerProfile" type="file" accept=".mobileprovision">
+ <label for="signerPassword">Certificate password</label><input type="password" id="signerPassword" placeholder="P12 password (can be empty)" autocomplete="off">
+ </section>
+ <div class="section-heading"><h2>3. Public certificate source (optional)</h2></div>
+ <section class="signer-panel"><p class="tiny">A certificate source JSON can list HTTPS download links to a P12 and its matching provisioning profile. OpenStore fetches files in your Safari session; source servers must support CORS. Never install untrusted configuration profiles or bypass certificate verification.</p>
+ <label for="certificateSource">Certificate source URL</label><input id="certificateSource" type="url" placeholder="https://example.org/openstore-certs.json">
+ <div class="signer-buttons"><button class="btn small secondary" data-action="load-certs" type="button">${icon('globe')} Load source</button></div>
+ <label for="certChoice">Available certificates</label><select id="certChoice"><option value="">${signerSources.length?'Choose a certificate source':'Load a source first'}</option>${signerSources.map((s,i)=>`<option value="${i}">${esc(s.name)}</option>`).join('')}</select>
+ <div class="signer-buttons"><button class="btn small soft" type="button" data-action="fetch-cert">${icon('download')} Use selected certificate</button></div>
+ <p class="tiny" id="sourceStatus"></p>
+ </section>
+ <section class="signer-panel"><h3>4. Sign your IPA</h3><div class="signer-buttons"><button class="btn" type="button" id="signerSubmit" data-action="sign-ipa" ${signerBusy?'disabled':''}>${icon('shield')} Sign IPA</button></div>
+ <div class="status-line" id="signer-status" aria-live="polite">${signerBusy?'Signing in progress…':'Ready. Connect to your own server first.'}</div>
+ <div class="signer-results" id="signerResults">${signerResult ? `<p><b>${esc(signerResult.name)}</b> · ${esc(signerResult.bundleId)}</p><p>Download and install links expire after 15 minutes.</p><div class="signer-buttons"><a class="btn small secondary" href="${esc(signerResult.ipaURL)}">Download signed IPA</a><a class="btn small" href="${esc(signerResult.installURL)}">Install on iPhone</a></div><p class="tiny">OTA installation succeeds only if the certificate is trusted and the profile authorizes your device. Special entitlements and JIT are not added automatically.</p>` : ''}</div>
+ </section>`;
+}
+let fetchedCert = null;
+async function readServerError(response) {
+ try {const o=await response.json();return typeof o.detail==='string'?o.detail:`HTTP ${response.status}`;}catch{return `HTTP ${response.status}`;}
+}
+async function checkSigner() {
+ try {
+   const host=signerUrl(document.getElementById('signerHost').value);
+   const response=await fetch(host+'/api/health',{credentials:'omit',cache:'no-store'});
+   if(!response.ok)throw new Error('Server HTTP '+response.status);
+   const health=await response.json();
+   if(!health.signingAvailable)throw new Error('Server is online but zsign is not installed.');
+   signerBackend=host; localStorage.setItem('openstore-signer-backend',host);
+   signerErr('Signer connected! Now choose the IPA, certificate and provisioning profile.');
+ }catch(e){signerErr('Connection failed: '+e.message+' Check HTTPS, server deployment and CORS.');}
+}
+async function loadCertificateSource() {
+ const status=document.getElementById('sourceStatus');
+ try {
+  const url=safeHttpsUrl(document.getElementById('certificateSource').value);
+  if(!url)throw new Error('Certificate source URL must use HTTPS');
+  const response=await fetch(url,{cache:'no-store',credentials:'omit'});
+  if(!response.ok)throw new Error('Source HTTP '+response.status);
+  const body=await response.text();if(body.length>60000)throw new Error('Source file too large');
+  const json=JSON.parse(body);if(!Array.isArray(json.certificates)||json.certificates.length>50)throw new Error('Source must contain a certificates array (max 50)');
+  signerSources=json.certificates.filter(x=>x && typeof x.name==='string' && safeHttpsUrl(x.p12URL) && safeHttpsUrl(x.profileURL)).map(x=>({name:x.name.slice(0,120),p12URL:x.p12URL,profileURL:x.profileURL}));
+  document.getElementById('certChoice').innerHTML='<option value="">Choose a certificate</option>'+signerSources.map((s,i)=>`<option value="${i}">${esc(s.name)}</option>`).join('');
+  status.textContent=`Loaded ${signerSources.length} certificate entries. Verify the source owner before using any certificate.`;
+ }catch(e){status.textContent=e.message+'; you can still choose local files manually.';}
+}
+async function fetchPublicCertificate(){
+ const status=document.getElementById('sourceStatus');
+ try {
+   const idx=document.getElementById('certChoice').value;if(idx==='')throw new Error('Select a certificate');
+   const item=signerSources[Number(idx)];if(!item)throw new Error('Certificate not found');
+   status.textContent='Downloading certificate files via Safari…';
+   const [a,b]=await Promise.all([fetch(item.p12URL,{credentials:'omit'}),fetch(item.profileURL,{credentials:'omit'})]);
+   if(!a.ok||!b.ok)throw new Error('Source refused a certificate download');
+   const [ab,bb]=await Promise.all([a.blob(),b.blob()]);
+   if(ab.size>512*1024 || bb.size>2*1024*1024)throw new Error('Certificate files are unusually large');
+   fetchedCert={p12:new File([ab],'shared.p12'),profile:new File([bb],'shared.mobileprovision'),name:item.name};
+   status.textContent=`${item.name} loaded in memory. Enter its password, choose IPA and sign. No certificate files are saved by this website.`;
+ }catch(e){fetchedCert=null;status.textContent=e.message+' (CORS may block browser downloads). You can download the files directly to Files instead.';}
+}
+async function signIPA() {
+ if(signerBusy)return;
+ const status=document.getElementById('signer-status');
+ const submit=document.getElementById('signerSubmit');
+ let host, key;
+ try {host=signerUrl(document.getElementById('signerHost').value);key=document.getElementById('signerToken').value.trim();
+  if(!key)throw new Error('Enter your signer backend access key.');
+  const ipa=document.getElementById('signerIPA').files?.[0];
+  const p12=document.getElementById('signerP12').files?.[0]||fetchedCert?.p12;
+  const profile=document.getElementById('signerProfile').files?.[0]||fetchedCert?.profile;
+  if(!ipa || !p12 || !profile)throw new Error('Choose IPA, P12, and matching .mobileprovision files.');
+  if(ipa.size>250*1024*1024)throw new Error('IPA must be under 250 MB');
+  signerBusy=true;submit.disabled=true;signerResult=null;
+  document.getElementById('signerResults').textContent='';
+  status.textContent='Uploading files and signing. Do not leave this page yet…';
+  const form=new FormData();form.append('ipa',ipa,ipa.name);form.append('p12',p12,p12.name);form.append('profile',profile,profile.name);form.append('password',document.getElementById('signerPassword').value);
+  const response=await fetch(host+'/api/sign',{method:'POST',headers:{'X-OpenStore-Key':key},body:form,credentials:'omit'});
+  if(!response.ok)throw new Error(await readServerError(response));
+  const out=await response.json();
+  if(!out.ok||!safeHttpsUrl(out.ipaURL)||!safeHttpsUrl(out.manifestURL))throw new Error('Signing server returned an invalid download link');
+  signerBackend=host;localStorage.setItem('openstore-signer-backend',host);
+  signerResult={name:String(out.name||'App'),bundleId:String(out.bundleId||''),ipaURL:out.ipaURL,installURL:'itms-services://?action=download-manifest&url='+encodeURIComponent(out.manifestURL)};
+  status.textContent='Signing completed. Download or install within 15 minutes.';
+  document.getElementById('signerResults').innerHTML=`<p><b>${esc(signerResult.name)}</b> · ${esc(signerResult.bundleId)}</p><div class="signer-buttons"><a class="btn small secondary" href="${esc(signerResult.ipaURL)}">Download signed IPA</a><a class="btn small" href="${esc(signerResult.installURL)}">Install on iPhone</a></div><p class="tiny">Your device must be included in the provisioning profile. iOS may still reject revoked certificates or missing entitlements.</p>`;
+ }catch(e){status.textContent='Signing failed: '+e.message;
+ }finally{signerBusy=false;if(submit)submit.disabled=false;}
+}
+document.addEventListener('click',event=>{
+ const act=event.target.closest('[data-action]')?.dataset.action;
+ if(act==='check-signer')checkSigner();
+ if(act==='load-certs')loadCertificateSource();
+ if(act==='fetch-cert')fetchPublicCertificate();
+ if(act==='sign-ipa')signIPA();
+});
+
 render();
 
 
